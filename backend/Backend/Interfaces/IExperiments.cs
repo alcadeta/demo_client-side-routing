@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace Backend.Interfaces
 {
-    public interface IHomePageExperiments
+    public interface IExperiments
     {
         public Dictionary<string, bool> GetExperiments();
     }

@@ -12,17 +12,16 @@ namespace Backend.Controllers
 {
     [ApiController]
     [Route("/")]
-    public class HomePageController : ControllerBase
+    public class HomeController : ControllerBase
     {
         private readonly Dictionary<string, bool> _experiments;
 
-        public HomePageController(IHomePageExperiments homePageExperiments) =>
-            _experiments = homePageExperiments.GetExperiments();
+        public HomeController(IHomeExperiments homeExperiments) =>
+            _experiments = homeExperiments.GetExperiments();
 
         [HttpGet]
         public HomePageResponse Get() => new()
         {
-            Title = "Client-Side Routing, Baby!",
             Experiments = _experiments
         };
     }

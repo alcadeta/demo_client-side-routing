@@ -5,12 +5,14 @@ import {
     Route
 } from "react-router-dom";
 
-import HomePage from "./components/HomePage";
+import Home from "./components/Home";
+import Products from "./components/Products";
 
 const App = () => (
     <Router>
         <Switch>
-            <Route exact path="/" component={HomePage} />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/products" component={Products} />
         </Switch>
     </Router>
 );

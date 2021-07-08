@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Button, Container } from "react-bootstrap";
 
-import homePageApi from "../api/homePageApi";
+import homeApi from "../api/homeApi";
 
-const HomePage = () => {
+const Home = () => {
     const [title, setTitle] = useState("");
     const [experiments, setExperiments] = useState({
         blueHeader: false,
@@ -12,8 +13,7 @@ const HomePage = () => {
 
     useEffect(async () => {
         try {
-            const { data } = await homePageApi.getData();
-
+            const { data } = await homeApi.getData();
             setTitle(data.title);
             setExperiments(data.experiments);
         } catch (err) {
@@ -27,13 +27,15 @@ const HomePage = () => {
     return (
         <Container>
             <h1 className={headerClass}>{title}</h1>
-            <Button
-                variant={buttonVariant}
-            >
-                Let&apos;s go!
-            </Button>
+            <Link to="/products">
+                <Button
+                    variant={buttonVariant}
+                >
+                    Let&apos;s go!
+                </Button>
+            </Link>
         </Container>
     );
 };
 
-export default HomePage;
+export default Home;

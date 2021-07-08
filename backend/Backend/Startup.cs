@@ -35,7 +35,7 @@ namespace Backend
             });
 
             // My Services
-            services.AddTransient<IHomePageExperiments, HomePageExperiments>();
+            services.AddTransient<IHomeExperiments, HomeExperiments>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
