@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Button, Container } from "react-bootstrap";
 import homePageApi from "./api/homePageApi";
 
 const App = () => {
@@ -14,7 +15,10 @@ const App = () => {
     }, []);
 
     return (
-        <h1>{title}</h1>
+        <Container>
+            <h1 className="home-title">{title}</h1>
+            <Button>BABAN</Button>
+        </Container>
     );
 };
 
