@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Backend.Experiments;
+using Backend.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -31,6 +33,9 @@ namespace Backend
             {
                 c.SwaggerDoc("v1", new() { Title = "Backend", Version = "v1" });
             });
+
+            // My Services
+            services.AddTransient<IHomePageExperiments, HomePageExperiments>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

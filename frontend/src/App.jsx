@@ -1,25 +1,18 @@
-import React, { useEffect, useState } from "react";
-import { Button, Container } from "react-bootstrap";
-import homePageApi from "./api/homePageApi";
+import React from "react";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route
+} from "react-router-dom";
 
-const App = () => {
-    const [title, setTitle] = useState("");
+import HomePage from "./components/HomePage";
 
-    useEffect(async () => {
-        try {
-            const { data } = await homePageApi.get();
-            setTitle(data.title);
-        } catch (err) {
-            console.log("Error getting homepage data.");
-        }
-    }, []);
-
-    return (
-        <Container>
-            <h1 className="home-title">{title}</h1>
-            <Button>BABAN</Button>
-        </Container>
-    );
-};
+const App = () => (
+    <Router>
+        <Switch>
+            <Route exact path="/" component={HomePage} />
+        </Switch>
+    </Router>
+);
 
 export default App;
