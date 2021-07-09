@@ -22,6 +22,7 @@ namespace Backend.Controllers
         [HttpGet]
         public HomePageResponse Get() => new()
         {
+            Title = "Client Side Routing, wooo!",
             Experiments = _experiments
         };
     }

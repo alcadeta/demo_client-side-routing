@@ -22,15 +22,14 @@ const Home = () => {
     }, []);
 
     const headerClass = experiments.blueHeader ? "blue-header" : "";
+
     const buttonVariant = experiments.redButton ? "danger" : "primary";
 
     return (
         <Container>
             <h1 className={headerClass}>{title}</h1>
             <Link to="/products">
-                <Button
-                    variant={buttonVariant}
-                >
+                <Button variant={buttonVariant}>
                     Let&apos;s go!
                 </Button>
             </Link>
